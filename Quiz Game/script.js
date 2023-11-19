@@ -4,6 +4,25 @@
 
 const prompt = require("prompt-sync")();
 
+/* 4. SPIN THE SLOT MACHINE */
+
+const ROWS = 3
+const COLUMNS = 3
+
+const SYMBOLS_COUNT = {
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8
+} 
+
+const SYMBOL_VALUES = {
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2
+}
+
 
 /* 1. ASK DEPOSIT FROM THE PLAYER */
 const deposit = () => {
@@ -35,8 +54,7 @@ const getNumberOfLines = () => {
             return numberOfLines;
         }
     }
-
-}
+};
 
 /* 3. DETERMINE THE AMOUNT THE USER WANTS TO BET */
 const determineBet = (balance, lines) => {
@@ -52,7 +70,13 @@ const determineBet = (balance, lines) => {
             return numberOfBet;
         }
     }
+};
 
+/* 4. SPIN THE SLOT MACHINE (IT IS GLOBAL VARIABLES SO IT IS IN TOP)*/
+
+const spin = () => {
+    const symbols = [];
+    for 
 }
 
 let balance = deposit();
