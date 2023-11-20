@@ -76,9 +76,28 @@ const determineBet = (balance, lines) => {
 
 const spin = () => {
     const symbols = [];
-    for 
-}
+    for (const [symbol, count] of Object.entries(SYMBOLS_COUNT)) {
+        for (let i = 0; i < count; i++) {
+            symbols.push (symbol);
+        }
+    }
 
+    const reels = [[], [], []]; 
+    for (let i = 0; i < COLUMNS; i++) {
+        const reelSymbols = [...symbols];
+        for (let j = 0; j < ROWS; j++) {
+            const randomSymbols = Math.floor(Math.random() * reelSymbols.length);
+            const finishedSymbol = reelSymbols [randomSymbols];
+            reels[i].push(finishedSymbol);
+            reelSymbols.splice(randomSymbols, 1);
+        }
+    }
+
+    return reels;
+};
+
+const reels = spin ();
+console.log(reels);
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = determineBet(balance, numberOfLines);
