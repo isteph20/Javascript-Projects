@@ -84,6 +84,7 @@ const spin = () => {
 
     const reels = [[], [], []]; 
     for (let i = 0; i < COLUMNS; i++) {
+        reels.push([]);
         const reelSymbols = [...symbols];
         for (let j = 0; j < ROWS; j++) {
             const randomSymbols = Math.floor(Math.random() * reelSymbols.length);
@@ -96,8 +97,26 @@ const spin = () => {
     return reels;
 };
 
-const reels = spin ();
-console.log(reels);
+const transpose = (reels) => {
+    const rows = [];
+
+    for (let i = 0; i < ROWS; 1++) {
+        rows.push([]);
+        for (let j = 0; j < COLS; j++) {
+            rows[i].push(reels[j][i])
+        }
+
+    }
+};
+
+const printSlot = (rows) => {
+    for (const row of rows) {
+
+    }
+}
+/* 5. CONFIRM IF THE PLAYER WON */
+
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = determineBet(balance, numberOfLines);
+const reels = spin ();
