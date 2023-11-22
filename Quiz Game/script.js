@@ -107,16 +107,27 @@ const transpose = (reels) => {
         }
 
     }
+
+    return rows;
+
 };
 
 const printSlot = (rows) => {
     for (const row of rows) {
-
+        let slotString = "A";
+        for (const [i, symbol] of row.entries ()) {
+            slotString += symbol
+            if (i != row.length -1) {
+                slotString += " | "
+            }
+        }
     }
-}
+};
 /* 5. CONFIRM IF THE PLAYER WON */
 
 let balance = deposit();
 const numberOfLines = getNumberOfLines();
 const bet = determineBet(balance, numberOfLines);
 const reels = spin ();
+const rows = transpose(reels);
+printSlot(rows);
