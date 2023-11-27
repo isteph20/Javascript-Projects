@@ -117,6 +117,120 @@ function exampleScope() {
 
 // console.log(localVar); // This would throw an error, as localVar is not accessible outside the function.
 
+/////////////
+///////////////////////////////////////////
+////////////
+
+Objects:
+In JavaScript, objects are key-value pairs and can be used to represent real-world entities. Here's how you can create and work with objects:
+// Object Declaration
+let person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  address: {
+    city: "New York",
+    zip: "10001"
+  },
+  hobbies: ["reading", "traveling", "coding"]
+};
+
+// Accessing Object Properties
+console.log(person.firstName);  // Outputs: John
+console.log(person.address.city);  // Outputs: New York
+console.log(person.hobbies[0]);  // Outputs: reading
+
+// Modifying Object Properties
+person.age = 31;
+console.log(person.age);  // Outputs: 31
+
+// Adding a New Property
+person.job = "Developer";
+
+// Deleting a Property
+delete person.lastName;
+
+
+Arrays:
+Arrays are ordered lists of values and are a fundamental part of JavaScript. Here's how to work with arrays:
+// Array Declaration
+let fruits = ["apple", "banana", "orange"];
+
+// Accessing Array Elements
+console.log(fruits[0]);  // Outputs: apple
+
+// Modifying Array Elements
+fruits[1] = "grape";
+console.log(fruits);  // Outputs: ["apple", "grape", "orange"]
+
+// Adding Elements to the End
+fruits.push("kiwi");
+
+// Removing the Last Element
+let lastFruit = fruits.pop();
+
+// Adding Elements to the Beginning
+fruits.unshift("pear");
+
+// Removing the First Element
+let firstFruit = fruits.shift();
+
+DOM Manipulation:
+The Document Object Model (DOM) is a programming interface for web documents. It represents the structure of a document as a tree of objects. JavaScript can be used to manipulate this tree, allowing dynamic changes to the content and structure of a web page.
+<!-- HTML Structure -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation</title>
+</head>
+<body>
+  <h1 id="main-heading">Hello, DOM!</h1>
+  <button id="change-text-btn">Change Text</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+// script.js
+
+// DOM Manipulation
+let heading = document.getElementById("main-heading");
+heading.innerHTML = "New Heading Text";
+
+// Creating Elements
+let newParagraph = document.createElement("p");
+newParagraph.textContent = "This is a new paragraph.";
+
+// Appending Elements
+document.body.appendChild(newParagraph);
+
+// Removing Elements
+let button = document.getElementById("change-text-btn");
+button.addEventListener("click", function () {
+  newParagraph.remove();
+});
+
+Event Handling:
+Event handling is crucial for making web pages interactive. JavaScript can respond to user actions (like clicks or keypresses) by using event listeners.
+// Event Handling
+let button = document.getElementById("change-text-btn");
+
+button.addEventListener("click", function () {
+  alert("Button Clicked!");
+});
+
+// Another Example: Change Text on Hover
+heading.addEventListener("mouseover", function () {
+  heading.innerHTML = "You hovered over me!";
+});
+
+heading.addEventListener("mouseout", function () {
+  heading.innerHTML = "Hello, DOM!";
+});
+
+In the example above, we use the addEventListener method to attach event listeners to the button and the heading. When the button is clicked, an alert is shown, and when the mouse hovers over the heading, its text is changed.
   
 
 
