@@ -232,8 +232,55 @@ heading.addEventListener("mouseout", function () {
 
 In the example above, we use the addEventListener method to attach event listeners to the button and the heading. When the button is clicked, an alert is shown, and when the mouse hovers over the heading, its text is changed.
   
+//////////////////////////////////////
+//////////////////////////////////////
+//////////////////////////////////////
 
+Functions in JavaScript:
+1. Function Declaration:
+Definition: A function is a reusable block of code that performs a specific task.
+Declaration:
+function greet() {
+  console.log("Hello!");
+}
+Explanation:
+function: Keyword to declare a function.
+greet: Name of the function.
+() : Parameters go inside the parentheses (none in this example).
+{} : Code block containing the task the function performs.
 
+Parameters:
+Definition: Inputs that a function can receive to customize its behavior.
+Example:
+function greet(name) {
+  console.log("Hello, " + name + "!");
+}
+Explanation:
+name: Parameter defined inside the parentheses.
+Used within the function to customize the greeting.
 
+Return Values:
+Definition: The result or output a function provides after execution.
+Example:
+function add(a, b) {
+  return a + b;
+}
+Explanation:
+return: Statement that provides the result.
+The function adds two numbers (a and b) and returns the sum.
 
+Putting it Together:
+Example Function:
+function calculateArea(length, width) {
+  let area = length * width;
+  return area;
+}
 
+How to Use:
+let rectangleArea = calculateArea(5, 10);
+console.log("Rectangle Area:", rectangleArea);
+Explanation:
+calculateArea takes length and width as parameters.
+Calculates the area by multiplying them.
+Returns the result.
+The returned result is stored in rectangleArea.
